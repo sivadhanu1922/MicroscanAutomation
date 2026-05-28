@@ -256,4 +256,39 @@ public class TicketDesk extends BaseTest {
         Assert.assertTrue(getDriver().findElement(By.xpath("//label[text()='Event Type']")).isDisplayed(), "Event Type dropdown missing from Service Request modal");
         System.out.println("PASS TC-TD-017: Service Request modal verified");
     }
+    // TC-TD-018
+
+    @Test(priority = 18, dependsOnMethods = "verifyTicketDeskPageLoad")
+    public void verifyTicketDetailsTab() {
+        getDriver().findElement(By.xpath("//div[contains(@class,'max-w-xl')]//button[.//*[local-name()='svg']]")).click();
+        getWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//h2[contains(text(),'Service Request')]")));
+        getDriver().findElement(By.xpath("//tbody/tr[1]/td[1]//button[contains(text(),'INC')]")).click();
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'TICKET ID:')]")));
+
+        Assert.assertTrue(getDriver().findElement(By.xpath("//button[text()='Details']")).isDisplayed());
+        Assert.assertTrue(getDriver().findElement(By.xpath("//*[text()='Ticket Details']")).isDisplayed());
+        Assert.assertTrue(getDriver().findElement(By.xpath("//*[text()='Service Details']")).isDisplayed());
+        Assert.assertTrue(getDriver().findElement(By.xpath("//*[text()='Service ID']")).isDisplayed());
+        Assert.assertTrue(getDriver().findElement(By.xpath("//*[text()='Status']")).isDisplayed());
+        Assert.assertTrue(getDriver().findElement(By.xpath("//*[text()='Bandwidth']")).isDisplayed());
+
+        System.out.println("PASS : Details tab verified");
+    }
+    // TC-TD-019
+
+    @Test(priority = 19, dependsOnMethods = "verifyTicketDetailsTab")
+    public void verifyActivityUpdatesTab() {
+        getDriver().findElement(By.xpath("//button[contains(.,'Activity Updates')]")).click();
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Latest Updates')]")));
+
+        Assert.assertTrue(getDriver().findElement(By.xpath("//*[contains(text(),'Latest Updates')]")).isDisplayed());
+        Assert.assertTrue(getDriver().findElement(By.xpath("//textarea")).isDisplayed());
+        Assert.assertTrue(getDriver().getPageSource().contains("Click to upload"));
+        Assert.assertTrue(getDriver().findElement(By.xpath("//button[text()='Submit']")).isDisplayed());
+        WebElement messageBox = getDriver().findElement(By.xpath("//textarea"));
+        messageBox.sendKeys("Testing activity updates");
+        Assert.assertEquals(messageBox.getAttribute("value"), "Testing activity updates");
+
+        System.out.println("PASS : Activity Updates tab verified");
+    }
 }
