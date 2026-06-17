@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
+//mport static org.bouncycastle.oer.its.template.ieee1609dot2.basetypes.Ieee1609Dot2BaseTypes.Duration;
+
 public class AuthenticationBaseTest {
 
     protected WebDriver driver;

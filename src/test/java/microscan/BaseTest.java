@@ -39,11 +39,13 @@ public class BaseTest {
         wait.until(ExpectedConditions.presenceOfElementLocated(
                 By.cssSelector("input[placeholder='Enter username']")));
         driver.findElement(
-                By.cssSelector("input[placeholder='Enter username']")).sendKeys("Siva");
+                By.cssSelector("input[placeholder='Enter username']")).sendKeys(
+                        "Siva");
 
         // Step 4: Enter Password
         driver.findElement(
-                By.cssSelector("input[placeholder='Enter password']")).sendKeys("Siva@123");
+                By.cssSelector("input[placeholder='Enter password']")).sendKeys(
+                        "Siva@123");
 
         // Step 5: Click Login Button
         driver.findElement(By.xpath("//button[text()='Login']")).click();
@@ -54,7 +56,8 @@ public class BaseTest {
 
         // Step 7: Enter OTP
         driver.findElement(
-                By.cssSelector("input[placeholder='Enter 6 digit OTP']")).sendKeys("123456");
+                By.cssSelector("input[placeholder='Enter 6 digit OTP']")).sendKeys(
+                        "123456");
 
         // Step 8: Click Verify Button
         driver.findElement(By.xpath("//button[text()='Verify']")).click();

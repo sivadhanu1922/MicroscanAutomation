@@ -99,36 +99,30 @@ public class LLCPerformance extends BaseTest {
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your name']")).sendKeys("Siva");
 
-        // Enter Phone
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your phone']")).clear();
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your phone']")).sendKeys("9876543210");
 
-        // Enter Email
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your email']")).clear();
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your email']")).sendKeys("siva@test.com");
 
-        // Enter Company
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your company']")).clear();
         getDriver().findElement(
                 By.cssSelector("input[placeholder='Enter your company']")).sendKeys("ELCOT");
 
-        // Enter Message
         getDriver().findElement(
                 By.cssSelector("textarea[placeholder='Enter your message']")).clear();
         getDriver().findElement(
                 By.cssSelector("textarea[placeholder='Enter your message']")).sendKeys("I am interested in full access");
 
-        // Click Submit
         getDriver().findElement(By.xpath("//button[text()='Submit']")).click();
 
         System.out.println("PASS: Full Access form submitted");
 
-        // Handle Alert after Submit
         try {
             getWait().until(ExpectedConditions.alertIsPresent());
             Alert alert = getDriver().switchTo().alert();
