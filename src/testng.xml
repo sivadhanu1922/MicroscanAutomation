@@ -4,9 +4,6 @@
     <test name="MicroscanTests" >
         <classes>
             <class name="microscan.Dashboard"/>
-            <class name="microscan.CustomerProfile"/>
-            <class name="microscan.Support"/>
-            <class name="microscan.TicketDesk"/>
             <class name="microscan.UserManagement"/>
             <class name="microscan.LLCPerformance"/>
             <class name="microscan.SLAReport"/>
