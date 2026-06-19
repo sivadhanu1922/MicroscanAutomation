@@ -244,6 +244,8 @@ public class TicketDesk extends BaseTest {
         WebElement textarea = getDriver().findElement(By.xpath("//textarea"));
         textarea.sendKeys("Internet connectivity issue");
         Assert.assertEquals(textarea.getAttribute("value"),"Internet connectivity issue");
+        Assert.assertTrue(getDriver().findElement(By.xpath("//label[text()='Upload Attachment']")).isDisplayed(), "Upload Attachment is missing ");
+        Assert.assertTrue(getDriver().findElement(By.xpath("//h3[text()='Service Details']")).isDisplayed(), "Service Details is missing ");
         System.out.println("PASS : Incident Ticket modal verified");
     }
 
@@ -283,7 +285,8 @@ public class TicketDesk extends BaseTest {
         textarea.sendKeys("Internet connectivity issue");
         Assert.assertEquals(textarea.getAttribute("value"), "Internet connectivity issue");
 
-        Assert.assertTrue(getDriver().findElement(By.xpath("//label[text()='Event Type']")).isDisplayed(), "Event Type dropdown missing from Service Request modal");
+        Assert.assertTrue(getDriver().findElement(By.xpath("//label[text()='Upload Attachment']")).isDisplayed(), "Upload Attachment is missing from Service Request modal");
+        Assert.assertTrue(getDriver().findElement(By.xpath("//h3[text()='Service Details']")).isDisplayed(), "Service Details is missing from Service Request modal");
         System.out.println("PASS TC-TD-017: Service Request modal verified");
     }
     // TC-TD-018
@@ -318,7 +321,7 @@ public class TicketDesk extends BaseTest {
         WebElement messageBox = getDriver().findElement(By.xpath("//textarea"));
         messageBox.sendKeys("Testing activity updates");
         Assert.assertEquals(messageBox.getAttribute("value"), "Testing activity updates");
-
+        Assert.assertTrue(getDriver().findElement(By.xpath("//h4[text()='Microscan Infocommtech Private Limited']")).isDisplayed());
         System.out.println("PASS : Activity Updates tab verified");
     }
 }
