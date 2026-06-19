@@ -230,6 +230,15 @@ public class TicketDesk extends BaseTest {
 
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Incident Ticket')]")));
         Assert.assertTrue(getDriver().findElement(By.xpath("//h2[contains(text(),'Incident Ticket')]")).isDisplayed());
+
+        Select iDropdown = new Select(getDriver().findElement(By.xpath("//label[text()='Circuit ID']/following-sibling::select")));
+        iDropdown.selectByVisibleText("MNLPXC005");
+        Assert.assertEquals(iDropdown.getFirstSelectedOption().getText(), "MNLPXC005");
+
+        Select iiDropdown = new Select(getDriver().findElement(By.xpath("//label[text()='Nature of complaints']/following-sibling::select")));
+        iiDropdown.selectByVisibleText("High Latency");
+        Assert.assertEquals(iiDropdown.getFirstSelectedOption().getText(), "High Latency");
+
         Assert.assertTrue(getDriver().findElement(By.xpath("//textarea")).isDisplayed());
         Assert.assertTrue(getDriver().findElement(By.xpath("//button[text()='Submit']")).isDisplayed());
         WebElement textarea = getDriver().findElement(By.xpath("//textarea"));
@@ -253,6 +262,27 @@ public class TicketDesk extends BaseTest {
         getDriver().findElement(By.xpath("//button[contains(.,'Service Request Ticket')]")).click();
         getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Service Request')]")));
         Assert.assertTrue(getDriver().findElement(By.xpath("//h2[contains(text(),'Service Request')]")).isDisplayed());
+
+        Select sDropdown = new Select(getDriver().findElement(By.xpath("//label[text()='Circuit ID']/following-sibling::select")));
+        sDropdown.selectByVisibleText("MNLPXC005");
+        Assert.assertEquals(sDropdown.getFirstSelectedOption().getText(), "MNLPXC005");
+
+        Select srDropdown = new Select(getDriver().findElement(By.xpath("//label[text()='Event Type']/following-sibling::select")));
+        srDropdown.selectByVisibleText("Non - Technical");
+        Assert.assertEquals(srDropdown.getFirstSelectedOption().getText(), "Non - Technical");
+
+        Select ssDropdown = new Select(getDriver().findElement(By.xpath("//label[text()='Nature of complaints']/following-sibling::select")));
+        ssDropdown.selectByVisibleText("Ip Pool Advertisement");
+        Assert.assertEquals(ssDropdown.getFirstSelectedOption().getText(), "Ip Pool Advertisement");
+        Assert.assertTrue(getDriver().findElement(By.xpath("//textarea")).isDisplayed());
+
+        Assert.assertTrue(getDriver().findElement(By.xpath("//button[text()='Submit']")).isDisplayed());
+        WebElement textarea = getDriver().findElement(By.xpath("//textarea"));
+
+        textarea.clear();
+        textarea.sendKeys("Internet connectivity issue");
+        Assert.assertEquals(textarea.getAttribute("value"), "Internet connectivity issue");
+
         Assert.assertTrue(getDriver().findElement(By.xpath("//label[text()='Event Type']")).isDisplayed(), "Event Type dropdown missing from Service Request modal");
         System.out.println("PASS TC-TD-017: Service Request modal verified");
     }
