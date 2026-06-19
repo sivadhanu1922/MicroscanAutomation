@@ -22,7 +22,7 @@ public class BaseTest {
         return wait;
     }
 
-    @BeforeSuite
+    @BeforeClass
     public void setUp() {
 
         // Step 1: Setup Chrome Browser
@@ -69,7 +69,7 @@ public class BaseTest {
         System.out.println("LOGIN SUCCESS: Browser opened and logged in successfully");
     }
 
-    @AfterSuite
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();
