@@ -1,11 +1,15 @@
 package microscan.Tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Dashboard extends BaseTest {
+
+    private static final Logger log = LogManager.getLogger(Dashboard.class);
 
     @Test(priority = 1)
     public void testDashboardPageLoads() {
@@ -14,7 +18,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//span[text()='Dashboard']")));
         Assert.assertTrue(getDriver().getPageSource().contains("Dashboard"),
                 "Dashboard page did not load");
-        System.out.println("PASS: Dashboard page loaded successfully");
+        log.info("PASS: Dashboard page loaded successfully");
     }
 
     @Test(priority = 2)
@@ -24,7 +28,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Active Services']"));
         Assert.assertTrue(activeServices.isDisplayed(),
                 "Active Services card not visible");
-        System.out.println("PASS: Active Services card is visible");
+       log.info("PASS: Active Services card is visible");
     }
 
     @Test(priority = 3)
@@ -34,7 +38,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Active Services']/following-sibling::p"));
         Assert.assertEquals(count.getText(), "20",
                 "Active Services count mismatch");
-        System.out.println("PASS: Active Services count is 20");
+       log.info("PASS: Active Services count is 20");
     }
 
     @Test(priority = 4)
@@ -44,7 +48,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='WIP Orders']"));
         Assert.assertTrue(wipOrders.isDisplayed(),
                 "WIP Orders card not visible");
-        System.out.println("PASS: WIP Orders card is visible");
+       log.info("PASS: WIP Orders card is visible");
     }
 
     @Test(priority = 5)
@@ -54,7 +58,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='WIP Orders']/following-sibling::p"));
         Assert.assertEquals(count.getText(), "7",
                 "WIP Orders count mismatch");
-        System.out.println("PASS: WIP Orders count is 7");
+       log.info("PASS: WIP Orders count is 7");
     }
 
     @Test(priority = 6)
@@ -64,7 +68,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Terminated Services']"));
         Assert.assertTrue(terminated.isDisplayed(),
                 "Terminated Services card not visible");
-        System.out.println("PASS: Terminated Services card is visible");
+       log.info("PASS: Terminated Services card is visible");
     }
 
     @Test(priority = 7)
@@ -74,7 +78,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Terminated Services']/following-sibling::p"));
         Assert.assertEquals(count.getText(), "7",
                 "Terminated Services count mismatch");
-        System.out.println("PASS: Terminated Services count is 7");
+       log.info("PASS: Terminated Services count is 7");
     }
 
     @Test(priority = 8)
@@ -84,7 +88,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Open Tickets']"));
         Assert.assertTrue(openTickets.isDisplayed(),
                 "Open Tickets card not visible");
-        System.out.println("PASS: Open Tickets card is visible");
+       log.info("PASS: Open Tickets card is visible");
     }
 
     @Test(priority = 9)
@@ -94,7 +98,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Open Tickets']/following-sibling::p"));
         Assert.assertEquals(count.getText(), "3",
                 "Open Tickets count mismatch");
-        System.out.println("PASS: Open Tickets count is 3");
+       log.info("PASS: Open Tickets count is 3");
     }
 
     @Test(priority = 10)
@@ -102,7 +106,7 @@ public class Dashboard extends BaseTest {
         getDriver().findElement(By.xpath("//span[text()='Dashboard']")).click();
         getDriver().findElement(
                 By.xpath("//p[text()='Active Services']")).click();
-        System.out.println("PASS: Active Services card clicked successfully");
+       log.info("PASS: Active Services card clicked successfully");
     }
 
     @Test(priority = 11)
@@ -110,7 +114,7 @@ public class Dashboard extends BaseTest {
         getDriver().findElement(By.xpath("//span[text()='Dashboard']")).click();
         getDriver().findElement(
                 By.xpath("//p[text()='WIP Orders']")).click();
-        System.out.println("PASS: WIP Orders card clicked successfully");
+       log.info("PASS: WIP Orders card clicked successfully");
     }
 
     @Test(priority = 12)
@@ -118,7 +122,7 @@ public class Dashboard extends BaseTest {
         getDriver().findElement(By.xpath("//span[text()='Dashboard']")).click();
         getDriver().findElement(
                 By.xpath("//p[text()='Terminated Services']")).click();
-        System.out.println("PASS: Terminated Services card clicked successfully");
+       log.info("PASS: Terminated Services card clicked successfully");
     }
 
     @Test(priority = 13)
@@ -126,7 +130,7 @@ public class Dashboard extends BaseTest {
         getDriver().findElement(By.xpath("//span[text()='Dashboard']")).click();
         getDriver().findElement(
                 By.xpath("//p[text()='Open Tickets']")).click();
-        System.out.println("PASS: Open Tickets card clicked successfully");
+       log.info("PASS: Open Tickets card clicked successfully");
     }
 
     @Test(priority = 14)
@@ -136,7 +140,7 @@ public class Dashboard extends BaseTest {
                 By.xpath("//p[text()='Active Services']")));
         Assert.assertTrue(getDriver().getPageSource().contains("Active Service"),
                 "Active Service table did not load");
-        System.out.println("PASS: Active Service table loaded");
+       log.info("PASS: Active Service table loaded");
     }
 
     @Test(priority = 15)
@@ -146,6 +150,6 @@ public class Dashboard extends BaseTest {
                 By.cssSelector("input[placeholder='Search...']"));
         Assert.assertTrue(searchBox.isDisplayed(),
                 "Search box not visible");
-        System.out.println("PASS: Search box is visible");
+       log.info("PASS: Search box is visible");
     }
 }

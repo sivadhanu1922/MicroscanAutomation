@@ -1,5 +1,7 @@
 package microscan.Tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -7,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SLAReport extends BaseTest {
+
+    private static final Logger log = LogManager.getLogger(SLAReport.class);
 
     private void goToSLAReport() {
         getDriver().findElement(By.xpath("//span[text()='SLA Report']")).click();
@@ -19,7 +23,7 @@ public class SLAReport extends BaseTest {
         goToSLAReport();
         Assert.assertTrue(getDriver().getPageSource().contains("SLA Report"),
                 "SLA Report page did not load");
-        System.out.println("PASS: SLA Report page loaded");
+        log.info("PASS: SLA Report page loaded");
     }
 
     @Test(priority = 2)
@@ -27,7 +31,7 @@ public class SLAReport extends BaseTest {
         goToSLAReport();
         WebElement period = getDriver().findElement(By.xpath("(//select)[1]"));
         Assert.assertTrue(period.isDisplayed(), "Period dropdown not visible");
-        System.out.println("PASS: Period dropdown is visible");
+        log.info("PASS: Period dropdown is visible");
     }
 
     @Test(priority = 3)
@@ -36,7 +40,7 @@ public class SLAReport extends BaseTest {
         Select period = new Select(getDriver().findElement(By.xpath("(//select)[1]")));
         period.selectByVisibleText("Monthly");
         Assert.assertEquals(period.getFirstSelectedOption().getText(), "Monthly");
-        System.out.println("PASS: Period selected as Monthly");
+        log.info("PASS: Period selected as Monthly");
     }
 
     @Test(priority = 4)
@@ -45,7 +49,7 @@ public class SLAReport extends BaseTest {
         Select period = new Select(getDriver().findElement(By.xpath("(//select)[1]")));
         period.selectByVisibleText("Quarterly");
         Assert.assertEquals(period.getFirstSelectedOption().getText(), "Quarterly");
-        System.out.println("PASS: Period selected as Quarterly");
+        log.info("PASS: Period selected as Quarterly");
     }
 
     @Test(priority = 5)
@@ -60,7 +64,7 @@ public class SLAReport extends BaseTest {
         WebElement btn = getDriver().findElement(
                 By.xpath("//label[text()='Monthly']/following-sibling::button"));
         Assert.assertTrue(btn.isDisplayed(), "Monthly second dropdown button not visible");
-        System.out.println("PASS: Monthly second dropdown is visible");
+        log.info("PASS: Monthly second dropdown is visible");
     }
 
 
@@ -76,7 +80,7 @@ public class SLAReport extends BaseTest {
         WebElement btn = getDriver().findElement(
                 By.xpath("//label[text()='Quarterly']/following-sibling::button"));
         Assert.assertTrue(btn.isDisplayed(), "Quarterly dropdown button not visible");
-        System.out.println("PASS: Quarterly dropdown button is visible");
+        log.info("PASS: Quarterly dropdown button is visible");
     }
 
     @Test(priority = 7)
@@ -91,7 +95,7 @@ public class SLAReport extends BaseTest {
         WebElement btn = getDriver().findElement(
                 By.xpath("//label[text()='Year']/following-sibling::button"));
         Assert.assertTrue(btn.isDisplayed(), "Year dropdown button not visible");
-        System.out.println("PASS: Year dropdown button is visible");
+        log.info("PASS: Year dropdown button is visible");
     }
 
     @Test(priority = 8)
@@ -100,7 +104,7 @@ public class SLAReport extends BaseTest {
         WebElement submitBtn = getDriver().findElement(
                 By.xpath("//button[text()='Submit']"));
         Assert.assertTrue(submitBtn.isDisplayed(), "Submit button not visible");
-        System.out.println("PASS: Submit button is visible");
+        log.info("PASS: Submit button is visible");
     }
 
     @Test(priority = 9)
@@ -112,15 +116,15 @@ public class SLAReport extends BaseTest {
         getWait().until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[text()='PDF']")));
         getDriver().findElement(By.xpath("//*[text()='PDF']")).click();
-        System.out.println("PASS: PDF selected");
+        log.info("PASS: PDF selected");
         try {
             getWait().until(ExpectedConditions.alertIsPresent());
             Alert alert = getDriver().switchTo().alert();
-            System.out.println("ALERT: " + alert.getText());
+            log.info("ALERT: " + alert.getText());
             alert.accept();
-            System.out.println("PASS: Alert accepted after PDF");
+            log.info("PASS: Alert accepted after PDF");
         } catch (Exception e) {
-            System.out.println("INFO: No alert after PDF");
+            log.info("INFO: No alert after PDF");
         }
     }
 
@@ -133,15 +137,15 @@ public class SLAReport extends BaseTest {
         getWait().until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[text()='CSV']")));
         getDriver().findElement(By.xpath("//*[text()='CSV']")).click();
-        System.out.println("PASS: CSV selected");
+        log.info("PASS: CSV selected");
         try {
             getWait().until(ExpectedConditions.alertIsPresent());
             Alert alert = getDriver().switchTo().alert();
-            System.out.println("ALERT: " + alert.getText());
+            log.info("ALERT: " + alert.getText());
             alert.accept();
-            System.out.println("PASS: Alert accepted after CSV");
+            log.info("PASS: Alert accepted after CSV");
         } catch (Exception e) {
-            System.out.println("INFO: No alert after CSV");
+            log.info("INFO: No alert after CSV");
         }
     }
 
@@ -154,15 +158,15 @@ public class SLAReport extends BaseTest {
         getWait().until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//*[text()='XLS']")));
         getDriver().findElement(By.xpath("//*[text()='XLS']")).click();
-        System.out.println("PASS: XLS selected");
+        log.info("PASS: XLS selected");
         try {
             getWait().until(ExpectedConditions.alertIsPresent());
             Alert alert = getDriver().switchTo().alert();
-            System.out.println("ALERT: " + alert.getText());
+            log.info("ALERT: " + alert.getText());
             alert.accept();
-            System.out.println("PASS: Alert accepted after XLS");
+            log.info("PASS: Alert accepted after XLS");
         } catch (Exception e) {
-            System.out.println("INFO: No alert after XLS");
+            log.info("INFO: No alert after XLS");
         }
     }
 }

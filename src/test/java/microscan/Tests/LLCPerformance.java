@@ -1,11 +1,15 @@
 package microscan.Tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LLCPerformance extends BaseTest {
+
+    private static final Logger log = LogManager.getLogger(LLCPerformance.class);
 
     @Test(priority = 1)
     public void testLLCPerformancePageLoads() {
@@ -14,7 +18,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//h2[text()='Demo Access']")));
         Assert.assertTrue(getDriver().getPageSource().contains("Demo Access"),
                 "LLC Performance page did not load");
-        System.out.println("PASS: LLC Performance page loaded");
+        log.info("PASS: LLC Performance page loaded");
     }
 
     @Test(priority = 2)
@@ -24,7 +28,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//h2[text()='Demo Access']"));
         Assert.assertTrue(demoAccess.isDisplayed(),
                 "Demo Access section not visible");
-        System.out.println("PASS: Demo Access section is visible");
+        log.info("PASS: Demo Access section is visible");
     }
 
     @Test(priority = 3)
@@ -34,7 +38,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//input[@value='Demo_LLC']"));
         Assert.assertTrue(username.isDisplayed(),
                 "Demo username not displayed");
-        System.out.println("PASS: Demo username Demo_LLC is displayed");
+        log.info("PASS: Demo username Demo_LLC is displayed");
     }
 
     @Test(priority = 4)
@@ -44,7 +48,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//input[@value='MIPL@2025']"));
         Assert.assertTrue(password.isDisplayed(),
                 "Demo password not displayed");
-        System.out.println("PASS: Demo password MIPL@2025 is displayed");
+        log.info("PASS: Demo password MIPL@2025 is displayed");
     }
 
     @Test(priority = 5)
@@ -54,7 +58,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//button[text()='Go to Micro LLC']"));
         Assert.assertTrue(btn.isDisplayed(),
                 "Go to Micro LLC button not visible");
-        System.out.println("PASS: Go to Micro LLC button is visible");
+        log.info("PASS: Go to Micro LLC button is visible");
     }
 
     @Test(priority = 6)
@@ -64,7 +68,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//button[text()='Go to Micro LLC']")));
         getDriver().findElement(
                 By.xpath("//button[text()='Go to Micro LLC']")).click();
-        System.out.println("PASS: Go to Micro LLC button clicked");
+        log.info("PASS: Go to Micro LLC button clicked");
     }
 
     @Test(priority = 7)
@@ -74,7 +78,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//h3[text()='Important Notes']"));
         Assert.assertTrue(notes.isDisplayed(),
                 "Important Notes section not visible");
-        System.out.println("PASS: Important Notes section is visible");
+        log.info("PASS: Important Notes section is visible");
     }
 
     @Test(priority = 8)
@@ -84,7 +88,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//h2[text()='Interested in Full Access?']"));
         Assert.assertTrue(formTitle.isDisplayed(),
                 "Full Access form not visible");
-        System.out.println("PASS: Interested in Full Access form is visible");
+        log.info("PASS: Interested in Full Access form is visible");
     }
 
     @Test(priority = 9)
@@ -121,16 +125,16 @@ public class LLCPerformance extends BaseTest {
 
         getDriver().findElement(By.xpath("//button[text()='Submit']")).click();
 
-        System.out.println("PASS: Full Access form submitted");
+        log.info("PASS: Full Access form submitted");
 
         try {
             getWait().until(ExpectedConditions.alertIsPresent());
             Alert alert = getDriver().switchTo().alert();
-            System.out.println("ALERT MESSAGE: " + alert.getText());
+            log.info("ALERT MESSAGE: " + alert.getText());
             alert.accept(); // Click OK on alert
-            System.out.println("PASS: Alert accepted successfully");
+            log.info("PASS: Alert accepted successfully");
         } catch (Exception e) {
-            System.out.println("INFO: No alert appeared after form submit");
+            log.info("INFO: No alert appeared after form submit");
         }
     }
 
@@ -141,7 +145,7 @@ public class LLCPerformance extends BaseTest {
                 By.xpath("//button[text()='Submit']"));
         Assert.assertTrue(submitBtn.isDisplayed(),
                 "Submit button not visible");
-        System.out.println("PASS: Submit button is visible");
+        log.info("PASS: Submit button is visible");
     }
 
     @Test(priority = 11)
@@ -155,11 +159,11 @@ public class LLCPerformance extends BaseTest {
         try {
             getWait().until(ExpectedConditions.alertIsPresent());
             Alert alert = getDriver().switchTo().alert();
-            System.out.println("ALERT MESSAGE: " + alert.getText());
+            log.info("ALERT MESSAGE: " + alert.getText());
             alert.accept();
-            System.out.println("PASS: Empty form alert accepted");
+            log.info("PASS: Empty form alert accepted");
         } catch (Exception e) {
-            System.out.println("INFO: No alert for empty form submit");
+            log.info("INFO: No alert for empty form submit");
         }
     }
 }
