@@ -1,0 +1,30 @@
+2026-06-20 10:35:31 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-20 10:35:31 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-20 10:35:32 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-20 10:35:32 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-20 10:35:32 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-20 10:35:33 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-20 10:35:33 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-20 10:35:34 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-20 10:35:35 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-20 10:35:57 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-20 11:05:26 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-20 11:05:26 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-20 11:05:26 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-20 11:05:26 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-20 11:05:26 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-20 11:05:28 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-20 11:05:28 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-20 11:05:28 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-20 11:05:30 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-20 11:05:52 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-20 11:15:33 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-20 11:15:34 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-20 11:15:34 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-20 11:15:34 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-20 11:15:35 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-20 11:15:36 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-20 11:15:36 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-20 11:15:36 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-20 11:15:38 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-20 11:16:48 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
