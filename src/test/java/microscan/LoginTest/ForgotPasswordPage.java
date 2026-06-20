@@ -1,4 +1,4 @@
-package microscan;
+package microscan.LoginTest;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

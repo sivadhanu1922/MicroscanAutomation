@@ -1,4 +1,4 @@
-package microscan;
+package microscan.LoginTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

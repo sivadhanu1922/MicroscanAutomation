@@ -1,4 +1,4 @@
-package microscan;
+package microscan.LoginTest;
 
 import java.time.Duration;
 

@@ -1,4 +1,4 @@
-package microscan;
+package microscan.Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
@@ -22,7 +22,7 @@ public class BaseTest {
         return wait;
     }
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
 
         // Step 1: Setup Chrome Browser
@@ -66,7 +66,7 @@ public class BaseTest {
         System.out.println("LOGIN SUCCESS: Browser opened and logged in successfully");
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         if (driver != null) {
             driver.quit();
