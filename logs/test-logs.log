@@ -28,3 +28,310 @@
 2026-06-20 11:15:36 INFO  microscan.Tests.BaseTest - Verify button clicked
 2026-06-20 11:15:38 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
 2026-06-20 11:16:48 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-24 10:52:48 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-24 10:53:34 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-24 10:53:34 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-24 10:53:35 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-24 10:53:35 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-24 10:53:35 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-24 10:53:37 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-24 10:53:37 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-24 10:53:37 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-24 10:53:39 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: Dashboard page loaded successfully
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: Active Services card is visible
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: Active Services count is 20
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card is visible
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: WIP Orders count is 7
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card is visible
+2026-06-24 10:53:39 INFO  microscan.Tests.Dashboard - PASS: Terminated Services count is 7
+2026-06-24 10:53:40 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card is visible
+2026-06-24 10:53:40 INFO  microscan.Tests.Dashboard - PASS: Open Tickets count is 3
+2026-06-24 10:53:40 INFO  microscan.Tests.Dashboard - PASS: Active Services card clicked successfully
+2026-06-24 10:53:40 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card clicked successfully
+2026-06-24 10:53:40 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card clicked successfully
+2026-06-24 10:53:41 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card clicked successfully
+2026-06-24 10:53:41 INFO  microscan.Tests.Dashboard - PASS: Active Service table loaded
+2026-06-24 10:53:41 INFO  microscan.Tests.Dashboard - PASS: Search box is visible
+2026-06-24 10:53:41 INFO  microscan.Tests.LLCPerformance - PASS: LLC Performance page loaded
+2026-06-24 10:53:41 INFO  microscan.Tests.LLCPerformance - PASS: Demo Access section is visible
+2026-06-24 10:53:42 INFO  microscan.Tests.LLCPerformance - PASS: Demo username Demo_LLC is displayed
+2026-06-24 10:53:42 INFO  microscan.Tests.LLCPerformance - PASS: Demo password MIPL@2025 is displayed
+2026-06-24 10:53:42 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button is visible
+2026-06-24 10:53:42 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button clicked
+2026-06-24 10:53:42 INFO  microscan.Tests.LLCPerformance - PASS: Important Notes section is visible
+2026-06-24 10:53:42 INFO  microscan.Tests.LLCPerformance - PASS: Interested in Full Access form is visible
+2026-06-24 10:53:43 INFO  microscan.Tests.LLCPerformance - PASS: Full Access form submitted
+2026-06-24 10:53:43 INFO  microscan.Tests.LLCPerformance - ALERT MESSAGE: Thank you for your interest! We will contact you soon.
+2026-06-24 10:53:43 INFO  microscan.Tests.LLCPerformance - PASS: Alert accepted successfully
+2026-06-24 10:53:43 INFO  microscan.Tests.LLCPerformance - PASS: Submit button is visible
+2026-06-24 10:53:58 INFO  microscan.Tests.LLCPerformance - INFO: No alert for empty form submit
+2026-06-24 10:53:59 INFO  microscan.Tests.SLAReport - PASS: SLA Report page loaded
+2026-06-24 10:53:59 INFO  microscan.Tests.SLAReport - PASS: Period dropdown is visible
+2026-06-24 10:53:59 INFO  microscan.Tests.SLAReport - PASS: Period selected as Monthly
+2026-06-24 10:53:59 INFO  microscan.Tests.SLAReport - PASS: Period selected as Quarterly
+2026-06-24 10:53:59 INFO  microscan.Tests.SLAReport - PASS: Monthly second dropdown is visible
+2026-06-24 10:53:59 INFO  microscan.Tests.SLAReport - PASS: Quarterly dropdown button is visible
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: Year dropdown button is visible
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: Submit button is visible
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: PDF selected
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in PDF format...
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after PDF
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: CSV selected
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in CSV format...
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after CSV
+2026-06-24 10:54:00 INFO  microscan.Tests.SLAReport - PASS: XLS selected
+2026-06-24 10:54:01 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in XLS format...
+2026-06-24 10:54:01 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after XLS
+2026-06-24 10:54:01 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory menu is visible
+2026-06-24 10:54:01 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory page loaded
+2026-06-24 10:54:01 INFO  microscan.Tests.UserManagement - PASS: User Management page loaded
+2026-06-24 10:54:01 INFO  microscan.Tests.Utilization - PASS: Utilization menu is visible
+2026-06-24 10:54:01 INFO  microscan.Tests.Utilization - PASS: Utilization page loaded
+2026-06-24 10:54:01 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-24 10:54:01 INFO  microscan.Tests.BaseTest - PDF generated: logs/test-logs.pdf
+2026-06-24 11:14:27 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-24 11:14:28 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-24 11:14:28 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-24 11:14:28 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-24 11:14:29 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-24 11:14:30 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-24 11:14:30 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-24 11:14:30 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-24 11:14:32 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-24 11:14:32 INFO  microscan.Tests.Dashboard - PASS: Dashboard page loaded successfully
+2026-06-24 11:14:32 INFO  microscan.Tests.Dashboard - PASS: Active Services card is visible
+2026-06-24 11:14:32 INFO  microscan.Tests.Dashboard - PASS: Active Services count is 20
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card is visible
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: WIP Orders count is 7
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card is visible
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: Terminated Services count is 7
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card is visible
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: Open Tickets count is 3
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: Active Services card clicked successfully
+2026-06-24 11:14:33 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card clicked successfully
+2026-06-24 11:14:34 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card clicked successfully
+2026-06-24 11:14:34 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card clicked successfully
+2026-06-24 11:14:34 INFO  microscan.Tests.Dashboard - PASS: Active Service table loaded
+2026-06-24 11:14:34 INFO  microscan.Tests.Dashboard - PASS: Search box is visible
+2026-06-24 11:14:34 INFO  microscan.Tests.LLCPerformance - PASS: LLC Performance page loaded
+2026-06-24 11:14:34 INFO  microscan.Tests.LLCPerformance - PASS: Demo Access section is visible
+2026-06-24 11:14:34 INFO  microscan.Tests.LLCPerformance - PASS: Demo username Demo_LLC is displayed
+2026-06-24 11:14:34 INFO  microscan.Tests.LLCPerformance - PASS: Demo password MIPL@2025 is displayed
+2026-06-24 11:14:34 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button is visible
+2026-06-24 11:14:34 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button clicked
+2026-06-24 11:14:35 INFO  microscan.Tests.LLCPerformance - PASS: Important Notes section is visible
+2026-06-24 11:14:35 INFO  microscan.Tests.LLCPerformance - PASS: Interested in Full Access form is visible
+2026-06-24 11:14:35 INFO  microscan.Tests.LLCPerformance - PASS: Full Access form submitted
+2026-06-24 11:14:35 INFO  microscan.Tests.LLCPerformance - ALERT MESSAGE: Thank you for your interest! We will contact you soon.
+2026-06-24 11:14:35 INFO  microscan.Tests.LLCPerformance - PASS: Alert accepted successfully
+2026-06-24 11:14:35 INFO  microscan.Tests.LLCPerformance - PASS: Submit button is visible
+2026-06-24 11:14:51 INFO  microscan.Tests.LLCPerformance - INFO: No alert for empty form submit
+2026-06-24 11:14:51 INFO  microscan.Tests.SLAReport - PASS: SLA Report page loaded
+2026-06-24 11:14:51 INFO  microscan.Tests.SLAReport - PASS: Period dropdown is visible
+2026-06-24 11:14:51 INFO  microscan.Tests.SLAReport - PASS: Period selected as Monthly
+2026-06-24 11:14:51 INFO  microscan.Tests.SLAReport - PASS: Period selected as Quarterly
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: Monthly second dropdown is visible
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: Quarterly dropdown button is visible
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: Year dropdown button is visible
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: Submit button is visible
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: PDF selected
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in PDF format...
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after PDF
+2026-06-24 11:14:52 INFO  microscan.Tests.SLAReport - PASS: CSV selected
+2026-06-24 11:14:53 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in CSV format...
+2026-06-24 11:14:53 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after CSV
+2026-06-24 11:14:53 INFO  microscan.Tests.SLAReport - PASS: XLS selected
+2026-06-24 11:14:53 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in XLS format...
+2026-06-24 11:14:53 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after XLS
+2026-06-24 11:14:53 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory menu is visible
+2026-06-24 11:14:53 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory page loaded
+2026-06-24 11:14:53 INFO  microscan.Tests.UserManagement - PASS: User Management page loaded
+2026-06-24 11:14:53 INFO  microscan.Tests.Utilization - PASS: Utilization menu is visible
+2026-06-24 11:14:54 INFO  microscan.Tests.Utilization - PASS: Utilization page loaded
+2026-06-24 11:14:54 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-24 11:14:54 ERROR microscan.Tests.BaseTest - LibreOffice exited with code: 1
+2026-06-24 11:18:43 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-24 11:18:44 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-24 11:18:44 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-24 11:18:44 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-24 11:18:44 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-24 11:18:46 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-24 11:18:46 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-24 11:18:46 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-24 11:18:47 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Dashboard page loaded successfully
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Active Services card is visible
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Active Services count is 20
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card is visible
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: WIP Orders count is 7
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card is visible
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Terminated Services count is 7
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card is visible
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Open Tickets count is 3
+2026-06-24 11:18:48 INFO  microscan.Tests.Dashboard - PASS: Active Services card clicked successfully
+2026-06-24 11:18:49 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card clicked successfully
+2026-06-24 11:18:49 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card clicked successfully
+2026-06-24 11:18:49 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card clicked successfully
+2026-06-24 11:18:49 INFO  microscan.Tests.Dashboard - PASS: Active Service table loaded
+2026-06-24 11:18:49 INFO  microscan.Tests.Dashboard - PASS: Search box is visible
+2026-06-24 11:18:49 INFO  microscan.Tests.LLCPerformance - PASS: LLC Performance page loaded
+2026-06-24 11:18:49 INFO  microscan.Tests.LLCPerformance - PASS: Demo Access section is visible
+2026-06-24 11:18:49 INFO  microscan.Tests.LLCPerformance - PASS: Demo username Demo_LLC is displayed
+2026-06-24 11:18:49 INFO  microscan.Tests.LLCPerformance - PASS: Demo password MIPL@2025 is displayed
+2026-06-24 11:18:50 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button is visible
+2026-06-24 11:18:50 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button clicked
+2026-06-24 11:18:50 INFO  microscan.Tests.LLCPerformance - PASS: Important Notes section is visible
+2026-06-24 11:18:50 INFO  microscan.Tests.LLCPerformance - PASS: Interested in Full Access form is visible
+2026-06-24 11:18:51 INFO  microscan.Tests.LLCPerformance - PASS: Full Access form submitted
+2026-06-24 11:18:51 INFO  microscan.Tests.LLCPerformance - ALERT MESSAGE: Thank you for your interest! We will contact you soon.
+2026-06-24 11:18:51 INFO  microscan.Tests.LLCPerformance - PASS: Alert accepted successfully
+2026-06-24 11:18:51 INFO  microscan.Tests.LLCPerformance - PASS: Submit button is visible
+2026-06-24 11:19:06 INFO  microscan.Tests.LLCPerformance - INFO: No alert for empty form submit
+2026-06-24 11:19:06 INFO  microscan.Tests.SLAReport - PASS: SLA Report page loaded
+2026-06-24 11:19:06 INFO  microscan.Tests.SLAReport - PASS: Period dropdown is visible
+2026-06-24 11:19:06 INFO  microscan.Tests.SLAReport - PASS: Period selected as Monthly
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: Period selected as Quarterly
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: Monthly second dropdown is visible
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: Quarterly dropdown button is visible
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: Year dropdown button is visible
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: Submit button is visible
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: PDF selected
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in PDF format...
+2026-06-24 11:19:07 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after PDF
+2026-06-24 11:19:08 INFO  microscan.Tests.SLAReport - PASS: CSV selected
+2026-06-24 11:19:08 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in CSV format...
+2026-06-24 11:19:08 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after CSV
+2026-06-24 11:19:08 INFO  microscan.Tests.SLAReport - PASS: XLS selected
+2026-06-24 11:19:08 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in XLS format...
+2026-06-24 11:19:08 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after XLS
+2026-06-24 11:19:08 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory menu is visible
+2026-06-24 11:19:08 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory page loaded
+2026-06-24 11:19:08 INFO  microscan.Tests.UserManagement - PASS: User Management page loaded
+2026-06-24 11:19:08 INFO  microscan.Tests.Utilization - PASS: Utilization menu is visible
+2026-06-24 11:19:08 INFO  microscan.Tests.Utilization - PASS: Utilization page loaded
+2026-06-24 11:19:09 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-24 11:19:09 ERROR microscan.Tests.BaseTest - LibreOffice exited with code: 1
+2026-06-24 11:25:10 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-24 11:25:10 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-24 11:25:11 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-24 11:25:11 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-24 11:25:11 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-24 11:25:12 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-24 11:25:12 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-24 11:25:12 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-24 11:25:14 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-24 11:25:14 INFO  microscan.Tests.Dashboard - PASS: Dashboard page loaded successfully
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: Active Services card is visible
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: Active Services count is 20
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card is visible
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: WIP Orders count is 7
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card is visible
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: Terminated Services count is 7
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card is visible
+2026-06-24 11:25:15 INFO  microscan.Tests.Dashboard - PASS: Open Tickets count is 3
+2026-06-24 11:25:16 INFO  microscan.Tests.Dashboard - PASS: Active Services card clicked successfully
+2026-06-24 11:25:16 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card clicked successfully
+2026-06-24 11:25:16 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card clicked successfully
+2026-06-24 11:25:16 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card clicked successfully
+2026-06-24 11:25:16 INFO  microscan.Tests.Dashboard - PASS: Active Service table loaded
+2026-06-24 11:25:16 INFO  microscan.Tests.Dashboard - PASS: Search box is visible
+2026-06-24 11:25:16 INFO  microscan.Tests.LLCPerformance - PASS: LLC Performance page loaded
+2026-06-24 11:25:16 INFO  microscan.Tests.LLCPerformance - PASS: Demo Access section is visible
+2026-06-24 11:25:16 INFO  microscan.Tests.LLCPerformance - PASS: Demo username Demo_LLC is displayed
+2026-06-24 11:25:16 INFO  microscan.Tests.LLCPerformance - PASS: Demo password MIPL@2025 is displayed
+2026-06-24 11:25:17 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button is visible
+2026-06-24 11:25:17 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button clicked
+2026-06-24 11:25:17 INFO  microscan.Tests.LLCPerformance - PASS: Important Notes section is visible
+2026-06-24 11:25:17 INFO  microscan.Tests.LLCPerformance - PASS: Interested in Full Access form is visible
+2026-06-24 11:25:18 INFO  microscan.Tests.LLCPerformance - PASS: Full Access form submitted
+2026-06-24 11:25:18 INFO  microscan.Tests.LLCPerformance - ALERT MESSAGE: Thank you for your interest! We will contact you soon.
+2026-06-24 11:25:18 INFO  microscan.Tests.LLCPerformance - PASS: Alert accepted successfully
+2026-06-24 11:25:18 INFO  microscan.Tests.LLCPerformance - PASS: Submit button is visible
+2026-06-24 11:25:33 INFO  microscan.Tests.LLCPerformance - INFO: No alert for empty form submit
+2026-06-24 11:25:33 INFO  microscan.Tests.SLAReport - PASS: SLA Report page loaded
+2026-06-24 11:25:33 INFO  microscan.Tests.SLAReport - PASS: Period dropdown is visible
+2026-06-24 11:25:34 INFO  microscan.Tests.SLAReport - PASS: Period selected as Monthly
+2026-06-24 11:25:34 INFO  microscan.Tests.SLAReport - PASS: Period selected as Quarterly
+2026-06-24 11:25:34 INFO  microscan.Tests.SLAReport - PASS: Monthly second dropdown is visible
+2026-06-24 11:25:34 INFO  microscan.Tests.SLAReport - PASS: Quarterly dropdown button is visible
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - PASS: Year dropdown button is visible
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - PASS: Submit button is visible
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - PASS: PDF selected
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in PDF format...
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after PDF
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - PASS: CSV selected
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in CSV format...
+2026-06-24 11:25:35 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after CSV
+2026-06-24 11:25:36 INFO  microscan.Tests.SLAReport - PASS: XLS selected
+2026-06-24 11:25:36 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in XLS format...
+2026-06-24 11:25:36 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after XLS
+2026-06-24 11:25:36 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory menu is visible
+2026-06-24 11:25:36 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory page loaded
+2026-06-24 11:25:36 INFO  microscan.Tests.UserManagement - PASS: User Management page loaded
+2026-06-24 11:25:36 INFO  microscan.Tests.Utilization - PASS: Utilization menu is visible
+2026-06-24 11:25:36 INFO  microscan.Tests.Utilization - PASS: Utilization page loaded
+2026-06-24 11:25:36 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-24 11:25:37 ERROR microscan.Tests.BaseTest - LibreOffice exited with code: 1
+2026-06-24 12:00:30 INFO  microscan.Tests.BaseTest - Chrome browser launched and configured
+2026-06-24 12:00:30 INFO  microscan.Tests.BaseTest - Navigated to http://localhost:3000
+2026-06-24 12:00:30 INFO  microscan.Tests.BaseTest - Username entered: Siva
+2026-06-24 12:00:31 INFO  microscan.Tests.BaseTest - Password entered
+2026-06-24 12:00:31 INFO  microscan.Tests.BaseTest - Login button clicked
+2026-06-24 12:00:32 INFO  microscan.Tests.BaseTest - OTP page loaded
+2026-06-24 12:00:32 INFO  microscan.Tests.BaseTest - OTP entered
+2026-06-24 12:00:32 INFO  microscan.Tests.BaseTest - Verify button clicked
+2026-06-24 12:00:34 INFO  microscan.Tests.BaseTest - LOGIN SUCCESS: Dashboard loaded, ready for tests
+2026-06-24 12:00:34 INFO  microscan.Tests.Dashboard - PASS: Dashboard page loaded successfully
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Active Services card is visible
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Active Services count is 20
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card is visible
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: WIP Orders count is 7
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card is visible
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Terminated Services count is 7
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card is visible
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Open Tickets count is 3
+2026-06-24 12:00:35 INFO  microscan.Tests.Dashboard - PASS: Active Services card clicked successfully
+2026-06-24 12:00:36 INFO  microscan.Tests.Dashboard - PASS: WIP Orders card clicked successfully
+2026-06-24 12:00:36 INFO  microscan.Tests.Dashboard - PASS: Terminated Services card clicked successfully
+2026-06-24 12:00:36 INFO  microscan.Tests.Dashboard - PASS: Open Tickets card clicked successfully
+2026-06-24 12:00:36 INFO  microscan.Tests.Dashboard - PASS: Active Service table loaded
+2026-06-24 12:00:36 INFO  microscan.Tests.Dashboard - PASS: Search box is visible
+2026-06-24 12:00:36 INFO  microscan.Tests.LLCPerformance - PASS: LLC Performance page loaded
+2026-06-24 12:00:36 INFO  microscan.Tests.LLCPerformance - PASS: Demo Access section is visible
+2026-06-24 12:00:36 INFO  microscan.Tests.LLCPerformance - PASS: Demo username Demo_LLC is displayed
+2026-06-24 12:00:36 INFO  microscan.Tests.LLCPerformance - PASS: Demo password MIPL@2025 is displayed
+2026-06-24 12:00:36 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button is visible
+2026-06-24 12:00:37 INFO  microscan.Tests.LLCPerformance - PASS: Go to Micro LLC button clicked
+2026-06-24 12:00:37 INFO  microscan.Tests.LLCPerformance - PASS: Important Notes section is visible
+2026-06-24 12:00:37 INFO  microscan.Tests.LLCPerformance - PASS: Interested in Full Access form is visible
+2026-06-24 12:00:37 INFO  microscan.Tests.LLCPerformance - PASS: Full Access form submitted
+2026-06-24 12:00:37 INFO  microscan.Tests.LLCPerformance - ALERT MESSAGE: Thank you for your interest! We will contact you soon.
+2026-06-24 12:00:37 INFO  microscan.Tests.LLCPerformance - PASS: Alert accepted successfully
+2026-06-24 12:00:38 INFO  microscan.Tests.LLCPerformance - PASS: Submit button is visible
+2026-06-24 12:00:53 INFO  microscan.Tests.LLCPerformance - INFO: No alert for empty form submit
+2026-06-24 12:00:53 INFO  microscan.Tests.SLAReport - PASS: SLA Report page loaded
+2026-06-24 12:00:53 INFO  microscan.Tests.SLAReport - PASS: Period dropdown is visible
+2026-06-24 12:00:54 INFO  microscan.Tests.SLAReport - PASS: Period selected as Monthly
+2026-06-24 12:00:54 INFO  microscan.Tests.SLAReport - PASS: Period selected as Quarterly
+2026-06-24 12:00:54 INFO  microscan.Tests.SLAReport - PASS: Monthly second dropdown is visible
+2026-06-24 12:00:54 INFO  microscan.Tests.SLAReport - PASS: Quarterly dropdown button is visible
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - PASS: Year dropdown button is visible
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - PASS: Submit button is visible
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - PASS: PDF selected
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in PDF format...
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after PDF
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - PASS: CSV selected
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in CSV format...
+2026-06-24 12:00:55 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after CSV
+2026-06-24 12:00:56 INFO  microscan.Tests.SLAReport - PASS: XLS selected
+2026-06-24 12:00:56 INFO  microscan.Tests.SLAReport - ALERT: Downloading SLA Report in XLS format...
+2026-06-24 12:00:56 INFO  microscan.Tests.SLAReport - PASS: Alert accepted after XLS
+2026-06-24 12:00:56 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory menu is visible
+2026-06-24 12:00:56 INFO  microscan.Tests.ServiceInventory - PASS: Service Inventory page loaded
+2026-06-24 12:00:56 INFO  microscan.Tests.UserManagement - PASS: User Management page loaded
+2026-06-24 12:00:56 INFO  microscan.Tests.Utilization - PASS: Utilization menu is visible
+2026-06-24 12:00:56 INFO  microscan.Tests.Utilization - PASS: Utilization page loaded
+2026-06-24 12:00:56 INFO  microscan.Tests.BaseTest - BROWSER CLOSED: All tests completed
+2026-06-24 12:00:56 INFO  microscan.Tests.BaseTest - PostScript file generated
+2026-06-24 12:00:56 INFO  microscan.Tests.BaseTest - PDF generated: /home/siva/IdeaProjects/MicroscanAutomation/logs/test-logs.pdf

@@ -77,5 +77,38 @@ public class BaseTest {
             driver.quit();
             log.info("BROWSER CLOSED: All tests completed");
         }
+
+        // Step 1: Convert log to PostScript using enscript
+        try {
+            ProcessBuilder enscript = new ProcessBuilder(
+                    "enscript",
+                    "/home/siva/IdeaProjects/MicroscanAutomation/logs/test-logs.log",
+                    "-o",
+                    "/home/siva/IdeaProjects/MicroscanAutomation/logs/test-logs.ps");
+            enscript.inheritIO();
+            Process enscriptProcess = enscript.start();
+            enscriptProcess.waitFor();
+            enscriptProcess.destroy();
+            log.info("PostScript file generated");
+
+            // Step 2: Convert PostScript to PDF using ps2pdf
+            ProcessBuilder ps2pdf = new ProcessBuilder(
+                    "ps2pdf",
+                    "/home/siva/IdeaProjects/MicroscanAutomation/logs/test-logs.ps",
+                    "/home/siva/IdeaProjects/MicroscanAutomation/logs/test-logs.pdf");
+            ps2pdf.inheritIO();
+            Process ps2pdfProcess = ps2pdf.start();
+            int exitCode = ps2pdfProcess.waitFor();
+            ps2pdfProcess.destroy();
+
+            if (exitCode == 0) {
+                log.info("PDF generated: /home/siva/IdeaProjects/MicroscanAutomation/logs/test-logs.pdf");
+            } else {
+                log.error("ps2pdf failed with exit code: {}", exitCode);
+            }
+
+        } catch (Exception e) {
+            log.error("PDF generation failed: {}", e.getMessage());
+        }
     }
 }
