@@ -1,163 +1,221 @@
 package microscan.Pages;
 
-import microscan.Tests.BaseTest;
+import microscan.Pages.reports.TestContextHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
 public class Support extends BaseTest {
 
-
-// TC-SP-001
-
-    @Test(priority = 1)
-    public void verifySupportPageLoad() {
-
-        getDriver().findElement(By.xpath("//span[text()='Support']")).click();
-
-        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Support']")));
-
-        Assert.assertTrue(getDriver().findElement(By.xpath("//h1[text()='Support']")).isDisplayed());
-        Assert.assertTrue(getDriver().findElement(By.xpath("//*[contains(text(),'Welcome')]")).isDisplayed());
-        Assert.assertTrue(getDriver().findElement(By.xpath("//*[contains(text(),'Tower Research Capital LLC')]")).isDisplayed());
-        Assert.assertTrue(getDriver().findElement(By.xpath("//*[contains(text(),'Technical')]")).isDisplayed());
-
-        System.out.println("PASS : Support page loaded successfully");
+    @Test(priority = 1, description = "TC-SP-001", groups = {"navigation"})
+    public void verifySupportPageDefaultLoad() {
+        TestContextHelper.setExpected("Support page loads with title, welcome card, customer support services section, escalation matrices, locations section and Create Ticket button");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            getDriver().findElement(By.xpath("//span[text()='Support']")).click();
+            getWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[text()='Support']")));
+            softAssert.assertTrue(getDriver().findElement(By.xpath("//h1[text()='Support']")).isDisplayed(), "Support page title is not displayed");
+            softAssert.assertTrue(getDriver().findElement(By.xpath("//*[contains(text(),'Welcome')]")).isDisplayed(), "Welcome card is not displayed");
+            softAssert.assertTrue(getDriver().findElement(By.xpath("//h2[text()='Customer Support Services']")).isDisplayed(), "Customer Support Services section is not displayed");
+            softAssert.assertTrue(getDriver().findElement(By.xpath("//h2[text()='Enterprise Escalation Matrix']")).isDisplayed(), "Enterprise Escalation Matrix section is not displayed");
+            softAssert.assertTrue(getDriver().findElement(By.xpath("//h2[text()='LLC Escalation Matrix']")).isDisplayed(), "LLC Escalation Matrix section is not displayed");
+            softAssert.assertTrue(getDriver().findElement(By.xpath("//h2[text()='Our Locations']")).isDisplayed(), "Our Locations section is not displayed");
+            WebElement createTicketButton = getDriver().findElement(By.xpath("//button[text()='Create Ticket']"));
+            softAssert.assertTrue(createTicketButton.isDisplayed(), "Create Ticket button is not displayed");
+            softAssert.assertTrue(createTicketButton.isEnabled(), "Create Ticket button is disabled");
+            String actual = "Support page title, welcome card, Customer Support Services section, Enterprise Escalation Matrix, LLC Escalation Matrix, Our Locations section and Create Ticket button verified successfully";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-002
-
-    @Test(priority = 2, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyCreateTicketButton() {
-
-        WebElement button = getDriver().findElement(By.xpath("//button[text()='Create Ticket']"));
-        Assert.assertTrue(button.isDisplayed());
-        button.click();
-        Assert.assertTrue(button.isEnabled());
-        System.out.println("PASS : Create Ticket button verified");
+    @Test(priority = 2, description = "TC-SP-002", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"data_accuracy"})
+    public void verifyLLCSupportInquiryCard() {
+        TestContextHelper.setExpected("LLC support card displays correct email, phone number and support availability");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement llcCard = getDriver().findElement(By.xpath("//h3[contains(text(),'LLC')]/parent::div"));
+            softAssert.assertTrue(llcCard.getText().contains("llc.support@microscan.co.in"), "LLC support email mismatch");
+            softAssert.assertTrue(llcCard.getText().contains("+91 22-6868-0098"), "LLC support phone number mismatch");
+            softAssert.assertTrue(llcCard.getText().contains("24×7"), "LLC support availability mismatch");
+            String actual = "LLC support card displays correct email, phone number and support timing";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-// TC-SP-003
-
-    @Test(priority = 3, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyCustomerSupportServicesHeading() {
-
-        Assert.assertTrue(getDriver().findElement(By.xpath("//h2[text()='Customer Support Services']")).isDisplayed());
-        System.out.println("PASS : Customer Support Services heading verified");
+    @Test(priority = 3, description = "TC-SP-003", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"data_accuracy"})
+    public void verifyP2PSupportInquiryCard() {
+        TestContextHelper.setExpected("P2P support card displays correct email, phone number and support availability");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement p2pCard = getDriver().findElement(By.xpath("//h3[contains(text(),'P2P support')]/parent::div"));
+            softAssert.assertTrue(p2pCard.getText().contains("enterprise.support@microscan.co.in"), "P2P support email mismatch");
+            softAssert.assertTrue(p2pCard.getText().contains("+91 22-6868-0001"), "P2P support phone number mismatch");
+            softAssert.assertTrue(p2pCard.getText().contains("24×7"), "P2P support availability mismatch");
+            String actual = "P2P support card displays correct email, phone number and support timing";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-004
-
-    @Test(priority = 4, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyLLCSupportCard() {
-
-        Assert.assertTrue(getDriver().getPageSource().contains("llc.support@microscan.co.in"));
-        Assert.assertTrue(getDriver().getPageSource().contains("+91 22-6868-0098"));
-        Assert.assertTrue(getDriver().getPageSource().contains("Mon – Sun | 24×7"));
-
-        System.out.println("PASS : LLC support card verified");
+    @Test(priority = 4, description = "TC-SP-004", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"data_accuracy"})
+    public void verifyILLSupportInquiryCard() {
+        TestContextHelper.setExpected("ILL support card displays correct email, phone number and support availability");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement illCard = getDriver().findElement(By.xpath("//h3[contains(text(),'ILL')]/parent::div"));
+            softAssert.assertTrue(illCard.getText().contains("enterprise.support@microscan.co.in"), "ILL support email mismatch");
+            softAssert.assertTrue(illCard.getText().contains("+91 22-6868-0001"), "ILL support phone number mismatch");
+            softAssert.assertTrue(illCard.getText().contains("24×7"), "ILL support availability mismatch");
+            String actual = "ILL support card displays correct email, phone number and support timing";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-005
-@Test(priority = 5, dependsOnMethods = "verifySupportPageLoad")
-public void verifyP2PSupportCard() {
-
-    WebElement p2pCard = getDriver().findElement(By.xpath("//h3[contains(text(),'P2P support')]/parent::div"));
-    Assert.assertTrue(p2pCard.findElement(By.xpath(".//span[contains(text(),'enterprise.support')]")).isDisplayed());
-    Assert.assertTrue(p2pCard.findElement(By.xpath(".//span[contains(text(),'+91 22-6868-0001')]")).isDisplayed());
-    System.out.println("PASS : P2P support card verified");
-}
-
-// TC-SP-006
-
-    @Test(priority = 6, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyILLSupportCard() {
-        WebElement illCard = getDriver().findElement(By.xpath("//h3[contains(text(),'ILL support')]/parent::div"));
-        Assert.assertTrue(illCard.findElement(By.xpath(".//span[contains(text(),'enterprise.support')]")).isDisplayed());
-        System.out.println("PASS : ILL support card verified");
-    }
-
-// TC-SP-007
-@Test(priority = 7, dependsOnMethods = "verifySupportPageLoad")
-public void verifyMailAndPhoneIcons() {
-
-    List<WebElement> icons = getDriver().findElements(By.xpath("//*[local-name()='svg']"));
-    Assert.assertTrue(icons.size() == 16);
-    System.out.println("PASS : Mail and Phone icons verified");
-}
-
-// TC-SP-008
-
-    @Test(priority = 8, dependsOnMethods = "verifySupportPageLoad")
-    public void verifySupportCardsDisplayed() {
-
-        List<WebElement> cards = getDriver().findElements(By.xpath("//h3[contains(text(),'support inquiries')]"));
-        Assert.assertEquals(cards.size(),3);
-        System.out.println("PASS : Support cards displayed correctly");
-    }
-
-// TC-SP-009
-
-    @Test(priority = 9, dependsOnMethods = "verifySupportPageLoad")
+    @Test(priority = 5, description = "TC-SP-005", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"data_accuracy"})
     public void verifyEnterpriseEscalationMatrix() {
-
-        Assert.assertTrue(getDriver().getPageSource().contains("L1 - Service Desk"));
-        Assert.assertTrue(getDriver().getPageSource().contains("L2 - Shift lead"));
-        Assert.assertTrue(getDriver().getPageSource().contains("L3 - Rohan Nakhawa / Santosh"));
-        Assert.assertTrue(getDriver().getPageSource().contains("L4 - Prashant Pradhan"));
-        System.out.println("PASS : Enterprise Escalation Matrix verified");
+        TestContextHelper.setExpected("Enterprise Escalation Matrix displays all escalation levels, email IDs and phone number");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement enterpriseMatrix = getDriver().findElement(By.xpath("//h2[text()='Enterprise Escalation Matrix']/parent::div"));
+            String matrixText = enterpriseMatrix.getText();
+            softAssert.assertTrue(matrixText.contains("L1 - Service Desk"), "L1 - Service Desk is not displayed");
+            softAssert.assertTrue(matrixText.contains("enterprise.support@microscan.co.in"), "L1 email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("+91 22-68680001"), "L1 phone number is incorrect");
+            softAssert.assertTrue(matrixText.contains("L2 - Shift lead"), "L2 - Shift lead is not displayed");
+            softAssert.assertTrue(matrixText.contains("shoc.Shiftlead@microscan.co.in"), "L2 email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("L3 - Rohan Nakhawa / Santosh"), "L3 escalation details are incorrect");
+            softAssert.assertTrue(matrixText.contains("rohan.nakhawa@microscan.co.in"), "Rohan email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("santosh@microscan.co.in"), "Santosh email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("L4 - Prashant Pradhan"), "L4 escalation details are incorrect");
+            softAssert.assertTrue(matrixText.contains("prashant.pradhan@microscan.co.in"), "Prashant email ID is incorrect");
+            String actual = "Enterprise Escalation Matrix details verified successfully";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-010
-
-    @Test(priority = 10, dependsOnMethods = "verifySupportPageLoad")
+    @Test(priority = 6, description = "TC-SP-006", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"data_accuracy"})
     public void verifyLLCEscalationMatrix() {
-
-        Assert.assertTrue(getDriver().getPageSource().contains("L3 - Rohan Nakhawa / Niwant Rachikar"));
-        Assert.assertTrue(getDriver().getPageSource().contains("prashant.pradhan@microscan.co.in"));
-        System.out.println("PASS : LLC Escalation Matrix verified");
+        TestContextHelper.setExpected("LLC Escalation Matrix displays all escalation levels, email IDs and phone number");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement llcMatrix = getDriver().findElement(By.xpath("//h2[text()='LLC Escalation Matrix']/parent::div"));
+            String matrixText = llcMatrix.getText();
+            softAssert.assertTrue(matrixText.contains("L1 - Service Desk"), "L1 - Service Desk is not displayed");
+            softAssert.assertTrue(matrixText.contains("enterprise.support@microscan.co.in"), "L1 email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("022-68680001"), "L1 phone number is incorrect");
+            softAssert.assertTrue(matrixText.contains("L2 - Shift lead"), "L2 - Shift lead is not displayed");
+            softAssert.assertTrue(matrixText.contains("shoc.Shiftlead@microscan.co.in"), "L2 email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("L3 - Rohan Nakhawa / Niwant Rachikar"), "L3 escalation details are incorrect");
+            softAssert.assertTrue(matrixText.contains("rohan.nakhawa@microscan.co.in"), "Rohan email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("niwant.rachikar@microscan.co.in"), "Niwant email ID is incorrect");
+            softAssert.assertTrue(matrixText.contains("L4 - Prashant Pradhan"), "L4 escalation details are incorrect");
+            softAssert.assertTrue(matrixText.contains("prashant.pradhan@microscan.co.in"), "Prashant email ID is incorrect");
+            String actual = "LLC Escalation Matrix details verified successfully";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-011
-
-    @Test(priority = 11, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyEscalationBorders() {
-
-        List<WebElement> borders = getDriver().findElements(By.xpath("//div[contains(@class,'border-b border-gray-200 pb-3')]"));
-        Assert.assertEquals(borders.size(),6);
-        System.out.println("PASS : Escalation borders verified");
+    @Test(priority = 7, description = "TC-SP-007", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"data_accuracy"})
+    public void verifyLocationsAndMapImage() {
+        TestContextHelper.setExpected("Mumbai office, Pune office details and office locations map are displayed");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement locationsCard = getDriver().findElement(By.xpath("//h2[text()='Our Locations']/parent::div"));
+            String locationText = locationsCard.getText();
+            softAssert.assertTrue(locationText.contains("Head Office - Mumbai"), "Mumbai office heading is not displayed");
+            softAssert.assertTrue(locationText.contains("Everest Grande"), "Mumbai office address is incorrect");
+            softAssert.assertTrue(locationText.contains("Mumbai - 400053"), "Mumbai office pincode is incorrect");
+            softAssert.assertTrue(locationText.contains("Mon – Fri | 9:30 a.m. to 6:30 p.m."), "Mumbai office timing is incorrect");
+            softAssert.assertTrue(locationText.contains("Branch Office - Pune"), "Pune office heading is not displayed");
+            softAssert.assertTrue(locationText.contains("Teerth Technospace"), "Pune office address is incorrect");
+            softAssert.assertTrue(locationText.contains("Pune"), "Pune office location is incorrect");
+            WebElement mapImage = getDriver().findElement(By.xpath("//img[@alt='Office locations map']"));
+            softAssert.assertTrue(mapImage.isDisplayed(), "Office locations map image is not displayed");
+            String actual = "Mumbai office, Pune office details and map image verified successfully";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-012
-
-    @Test(priority = 12, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyLocationsCard() {
-
-        Assert.assertTrue(getDriver().getPageSource().contains("Head Office - Mumbai"));
-        Assert.assertTrue(getDriver().getPageSource().contains("Branch Office - Pune"));
-        Assert.assertTrue(getDriver().getPageSource().contains("Mon – Fri | 9:30 a.m. to 6:30 p.m."));
-        System.out.println("PASS : Locations card verified");
+    @Test(priority = 8, description = "TC-SP-008", dependsOnMethods = "verifySupportPageDefaultLoad", groups = {"ui_validation"})
+    public void verifyMailAndPhoneIcons() {
+        TestContextHelper.setExpected("All mail and phone icons are displayed correctly in support inquiry cards");
+        SoftAssert softAssert = new SoftAssert();
+        try {
+            WebElement headphoneIcons = getDriver().findElement(By.cssSelector("svg.lucide-headphones"));
+            List<WebElement> mailIcon = getDriver().findElements(By.cssSelector("svg.lucide-mail"));
+            List<WebElement> phoneIcons = getDriver().findElements(By.cssSelector("svg.lucide-phone"));
+            softAssert.assertEquals(mailIcon.size(), 3, "Mail icon count mismatch");
+            softAssert.assertEquals(phoneIcons.size(), 3, "Phone icon count mismatch");
+            for (int i = 0; i < mailIcon.size(); i++) {
+                softAssert.assertTrue(mailIcon.get(i).isDisplayed(), "Mail icon is not displayed for card " + (i + 1));
+            }
+            for (int i = 0; i < phoneIcons.size(); i++) {
+                softAssert.assertTrue(phoneIcons.get(i).isDisplayed(), "Phone icon is not displayed for card " + (i + 1));
+            }
+            softAssert.assertTrue(headphoneIcons.isDisplayed(), "Headphone icons are incorrect");
+            String actual = "3 mail icons and 3 phone icons displayed successfully";
+            TestContextHelper.setActual(actual);
+            softAssert.assertAll();
+            System.out.println("PASS : " + actual);
+        } catch (Throwable e) {
+            TestContextHelper.setActual("Validation Failed");
+            System.out.println("FAIL : " + e.getMessage());
+            TestContextHelper.setFailureReason(e.getMessage());
+            throw e;
+        }
     }
 
-
-// TC-SP-013
-
-    @Test(priority = 13, dependsOnMethods = "verifySupportPageLoad")
-    public void verifyMapImage() {
-
-        WebElement image = getDriver().findElement(By.xpath("//img[@alt='Office locations map']"));
-        Assert.assertTrue(image.isDisplayed());
-        System.out.println("PASS : Map image verified");
-    }
 
 }
