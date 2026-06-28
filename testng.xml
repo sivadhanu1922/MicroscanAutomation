@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Customer Portal Automation Suite">
+
+    <test name="Customer Portal Tests">
+
+        <classes>
+
+            <class name="microscan.LoginTest.LoginTest"/>
+
+            <class name="microscan.LoginTest.ForgotPasswordTest"/>
+
+            <class name="microscan.LoginTest.OTPTest"/>
+
+            <class name="microscan.LoginTest.ResetPasswordTest"/>
+
+            <class name="microscan.LoginTest.LogoutTest"/>
+
+        </classes>
+
+    </test>
+
+</suite>
