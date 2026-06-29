@@ -64,7 +64,7 @@ public class TicketDesk extends BaseTest {
 
     @Test(priority = 3, description = "TC-TD-003", dependsOnMethods = "verifyTicketDeskPageLoad", groups = {"data_quality"})
     public void verifyTicketTableContent() {
-        TestContextHelper.setExpected("Ticket table displays 10 records with valid Ticket ID, Customer Name, Circuit ID and Service Type values");
+        TestContextHelper.setExpected("Ticket table displays 10 records with valid Ticket ID, Customer Name, Circuit ID, Service Type and Nature of complaint values");
         SoftAssert softAssert = new SoftAssert();
         try {
             List<WebElement> rows = getDriver().findElements(By.xpath("//tbody/tr"));
@@ -72,14 +72,16 @@ public class TicketDesk extends BaseTest {
             for (int i = 1; i <= rows.size(); i++) {
                 String ticketId = getDriver().findElement(By.xpath("//tbody/tr[" + i + "]/td[1]")).getText().trim();
                 String customerName = getDriver().findElement(By.xpath("//tbody/tr[" + i + "]/td[2]")).getText().trim();
-                String serviceType = getDriver().findElement(By.xpath("//tbody/tr[" + i + "]/td[4]")).getText().trim();
                 String circuitId = getDriver().findElement(By.xpath("//tbody/tr[" + i + "]/td[3]")).getText().trim();
+                String serviceType = getDriver().findElement(By.xpath("//tbody/tr[" + i + "]/td[4]")).getText().trim();
+                String nature = getDriver().findElement(By.xpath("//tbody/tr[" + i + "]/td[5]")).getText().trim();
                 softAssert.assertTrue(ticketId.matches("^INC\\d+$"), "Invalid ticket ID format for row " + i);
                 softAssert.assertEquals(customerName, "Tower Research Capital LLC", "Customer name mismatch for row " + i);
                 softAssert.assertFalse(serviceType.isEmpty(), "Service type is empty for row " + i);
                 softAssert.assertFalse(circuitId.isEmpty(), "Circuit ID is empty for row " + i);
+                softAssert.assertFalse(nature.isEmpty(), "Nature of complaint is empty for row " + i);
             }
-            String actual = "All 10 ticket records verified successfully with valid customer name and service type";
+            String actual = "All 10 ticket records verified successfully with valid details";
             TestContextHelper.setActual(actual);
             softAssert.assertAll();
             System.out.println("PASS : " + actual);
@@ -154,8 +156,7 @@ public class TicketDesk extends BaseTest {
                 softAssert.assertFalse(createdOn.isEmpty(), "Created On is empty for row " + i);
                 softAssert.assertFalse(updatedOn.isEmpty(), "Updated On is empty for row " + i);
                 softAssert.assertFalse(resolvedTime.isEmpty(), "Resolved Time is empty for row " + i);
-                // Closed time can be empty for open tickets
-                softAssert.assertTrue(closedTime.isEmpty()  || !closedTime.isBlank(), "Invalid Closed Time value for row " + i);//blank = " spaces" or \t etc
+                softAssert.assertTrue(closedTime.isEmpty() || !closedTime.isBlank(), "Invalid Closed Time value for row " + i);//blank = " spaces" or \t etc
             }
             String actual = "Timing fields verified successfully for " + rows.size() + " records";
             TestContextHelper.setActual(actual);
@@ -510,8 +511,8 @@ public class TicketDesk extends BaseTest {
                 }
                 softAssert.assertEquals(popupIssueType, issueType, "Issue Type mismatch for row " + i);
                 softAssert.assertEquals(popupStatus, status, "Status mismatch for row " + i);
-                softAssert.assertTrue(popupCreatedOn.contains(createdOn.split(" ")[0]), "Created On mismatch for row " + i);//space split with date
-                softAssert.assertTrue(popupUpdatedOn.contains(updatedOn.split(" ")[0]), "Updated On mismatch for row " + i);
+                softAssert.assertEquals(popupCreatedOn, createdOn, "Created On mismatch for row " + i);
+                softAssert.assertEquals(popupUpdatedOn, updatedOn, "Updated On mismatch for row " + i);
                 closeTicketPopup();
             }
             String actual = "All " + rows.size() + " ticket detail popups displayed data matching the table values";

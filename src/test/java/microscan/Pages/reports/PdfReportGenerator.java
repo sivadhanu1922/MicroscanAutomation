@@ -103,7 +103,7 @@ public class PdfReportGenerator {
         details.addCell(createInfoCell("Test Name: " + value(first.getTestName())));
         details.addCell(createInfoCell("Classes Executed: " + uniqueClasses));
         details.addCell(createInfoCell("Methods Executed: " + results.size()));
-        details.addCell(createInfoCell("Total Execution Time: " + (totalDuration / 1000) + " seconds"));
+        details.addCell(createInfoCell("Total Execution Time: " + (totalDuration / 1000) + " seconds")); //ms->s
         details.addCell(createInfoCell("Generated On: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss"))));
         document.add(details);
     }
@@ -130,7 +130,7 @@ public class PdfReportGenerator {
             table.addCell(createStatusCell(value(data.getStatus())));
             table.addCell(createRowCell(value(data.getExpectedResult()), rowColor));//exp
             if ("FAIL".equalsIgnoreCase(data.getStatus())) {//actual
-                Link link = new Link("View Details", PdfAction.createGoTo(data.getTestCaseId()));//when clicks, find the destination named TC005 and go
+                Link link = new Link("View Details", PdfAction.createGoTo(data.getTestCaseId()));                                   //when clicks, find the destination named TC005 and go
                 Cell linkCell = new Cell().add(new Paragraph(link).setFontSize(8).setFontColor(new DeviceRgb(255, 51, 51)).setUnderline()).setBackgroundColor(rowColor).setTextAlignment(TextAlignment.CENTER).setVerticalAlignment(VerticalAlignment.MIDDLE).setPadding(4);
                 table.addCell(linkCell);
             } else {

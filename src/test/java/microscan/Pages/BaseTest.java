@@ -38,7 +38,7 @@ public class BaseTest {
         System.out.println("LOGIN SUCCESS: Browser opened and logged in successfully");
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();

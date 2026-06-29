@@ -1,5 +1,6 @@
 package microscan.Pages;
 
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -95,7 +96,9 @@ public class CustomerProfile extends BaseTest {
         TestContextHelper.setExpected("All customer rows display correct Customer ID, Master Customer Name, " + "Customer Name and Created On values");
         SoftAssert softAssert = new SoftAssert();
         try {
-            String[][] expectedData = {{"C100000064", "Tower Research Capital Markets India Pvt Ltd", "Tower Research Capital Markets India Pvt Ltd", "03-04-2024"}, {"C100000066", "Tower Research Capital Markets India Pvt Ltd", "Tower Research Capital LLC", "03-04-2024"}, {"C100001181", "Tower Research Capital Markets India Pvt Ltd", "Tower Research Capital India Private Limited", "03-04-2024"}};
+            String[][] expectedData = {{"C100000064", "Tower Research Capital Markets India Pvt Ltd", "Tower Research Capital Markets India Pvt Ltd", "03-04-2024"},
+                    {"C100000066", "Tower Research Capital Markets India Pvt Ltd", "Tower Research Capital LLC", "03-04-2024"},
+                    {"C100001181", "Tower Research Capital Markets India Pvt Ltd", "Tower Research Capital India Private Limited", "03-04-2024"}};
             List<WebElement> rows = getDriver().findElements(By.xpath("//tbody/tr"));
             softAssert.assertEquals(rows.size(), expectedData.length, "Customer Details row count mismatch");
             for (int row = 0; row < expectedData.length; row++) {
@@ -314,7 +317,12 @@ public class CustomerProfile extends BaseTest {
         TestContextHelper.setExpected("Active Services records display correct Circuit ID, Customer Name, " + "Service Type, Service Name, Bandwidth, Location, Provider and Activation Date");
         SoftAssert softAssert = new SoftAssert();
         try {
-            String[][] expectedData = {{"101018302", "Tower Research Capital Markets India Pvt Ltd", "ILL", "ILL LLC", "10 Mbps", "Dheeraj Arma, Andheri East, Mumbai", "-", "01-10-2018"}, {"MNLP100007", "Tower Research Capital LLC", "IPLC", "IPLC", "1 Gbps", "MRS 1", "Tata BMC", "01-10-2020"}, {"MNLP200001", "Tower Research Capital LLC", "IPLC", "IPLC", "1 Gbps", "SGX to CLS 3", "-", "01-11-2019"}, {"MNPLCC0005", "Tower Research Capital LLC", "Data_Center_Ser", "DCS_IPLC_Cross_Connect", "Cross Connect", "Microscan / Tower Rack", "Hurricane Electric", "07-07-2023"}, {"MT000417", "Tower Research Capital Markets India Pvt Ltd", "ILL", "ILL LLC", "10 Mbps", "63 Moons Technologies, FT Tower", "-", "12-11-2023"}, {"5051340", "Tower Research Capital Markets India Pvt Ltd", "NLD", "LLC", "BANDWIDTH LL CB", "Multi Commodity Exchange Of India Ltd", "63 Moons Technologies", "11-11-2023"}};
+            String[][] expectedData = {{"101018302", "Tower Research Capital Markets India Pvt Ltd", "ILL", "ILL LLC", "10 Mbps", "Dheeraj Arma, Andheri East, Mumbai", "-", "01-10-2018"},
+                    {"MNLP100007", "Tower Research Capital LLC", "IPLC", "IPLC", "1 Gbps", "MRS 1", "Tata BMC", "01-10-2020"},
+                    {"MNLP200001", "Tower Research Capital LLC", "IPLC", "IPLC", "1 Gbps", "SGX to CLS 3", "-", "01-11-2019"},
+                    {"MNPLCC0005", "Tower Research Capital LLC", "Data_Center_Ser", "DCS_IPLC_Cross_Connect", "Cross Connect", "Microscan / Tower Rack", "Hurricane Electric", "07-07-2023"},
+                    {"MT000417", "Tower Research Capital Markets India Pvt Ltd", "ILL", "ILL LLC", "10 Mbps", "63 Moons Technologies, FT Tower", "-", "12-11-2023"},
+                    {"5051340", "Tower Research Capital Markets India Pvt Ltd", "NLD", "LLC", "BANDWIDTH LL CB", "Multi Commodity Exchange Of India Ltd", "63 Moons Technologies", "11-11-2023"}};
             List<WebElement> rows = getDriver().findElements(By.xpath("//tbody/tr"));
             softAssert.assertEquals(rows.size(), expectedData.length, "Active Services row count mismatch");
             for (int row = 0; row < expectedData.length; row++) {
@@ -537,7 +545,7 @@ public class CustomerProfile extends BaseTest {
             softAssert.assertAll();
 
             System.out.println("PASS : " + tcId + " - " + rows.size() + " matching row(s) displayed");
-        } catch (Exception e) {
+        } catch (Throwable e) { //avoid long msg
             String reason;
             if (e instanceof org.openqa.selenium.TimeoutException) {
                 reason = tcId + " - Expected " + expectedCount + " result(s), but actual results did not match.";
@@ -570,7 +578,7 @@ public class CustomerProfile extends BaseTest {
             TestContextHelper.setActual(rows.size() + " matching row(s) displayed");
             softAssert.assertAll();
             System.out.println("PASS : " + tcId + " - " + rows.size() + " matching row(s) displayed");
-        } catch (Exception e) {
+        } catch (Throwable e) {
             String reason;
             if (e instanceof org.openqa.selenium.TimeoutException) {
                 reason = tcId + " - Expected " + expectedCount + " result(s), but actual results did not match.";
@@ -603,7 +611,7 @@ public class CustomerProfile extends BaseTest {
             TestContextHelper.setActual(rows.size() + " matching row(s) displayed");
             softAssert.assertAll();
             System.out.println("PASS : " + tcId + " - " + rows.size() + " matching row(s) displayed");
-        } catch (Exception e) {
+        } catch (Throwable e) {
             String reason;
             if (e instanceof org.openqa.selenium.TimeoutException) {
                 reason = tcId + " - Expected " + expectedCount + " result(s), but actual results did not match.";
@@ -636,7 +644,7 @@ public class CustomerProfile extends BaseTest {
             TestContextHelper.setActual(rows.size() + " matching row(s) displayed");
             softAssert.assertAll();
             System.out.println("PASS : " + tcId + " - " + rows.size() + " matching row(s) displayed");
-        } catch (Exception e) {
+        } catch (Throwable e) {
             String reason;
             if (e instanceof org.openqa.selenium.TimeoutException) {
                 reason = tcId + " - Expected " + expectedCount + " result(s), but actual results did not match.";
