@@ -8,9 +8,18 @@
     </listeners>
 
     <test name="Core Functional Test Execution">
-
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="navigation"/>-->
+<!--            </run>-->
+<!--        </groups>-->
         <classes>
-            <class name="microscan.Pages.CustomerProfile"/>
+            <class name="microscan.Pages.CustomerProfile">
+<!--                <methods>-->
+<!--                    <include name="verifyCustomerProfileDefaultLoad"/>-->
+<!--                    <include name="verifyWIPOrdersSearch"/>-->
+<!--                </methods>-->
+            </class>
             <class name="microscan.Pages.TicketDesk"/>
             <class name="microscan.Pages.Support"/>
         </classes>
